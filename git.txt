@@ -1,0 +1,80 @@
+GIT..
+VCS --> verrsion conrrol system
+RCS -->  Revision Control System : https://www.gnu.org/software/rcs/
+
+CVCS --> Centralized Version Control Systems (CVCSs) 
+. If that server goes down for an hour, then during that hour
+nobody can collaborate at all or save versioned changes to anything they’re working on. If the hard
+disk the central database is on becomes corrupted, and proper backups haven’t been kept, you lose
+absolutely everything — the entire history of the project except whatever single snapshots people
+happen to have on their local machines. Local VCSs suffer from this same problem — whenever you
+have the entire history of the project in a single place, you risk losing everything.
+
+DVCS --> Distributed Version Control Systems ( such as Git, Mercurial,
+Bazaar or Darcs)
+What is Git--> it is nutshell
+
+git config --list --show-origin
+
+The first thing you should do when you install Git is to set your user name and email address. This
+is important because every Git commit uses this information, and it’s immutably baked into the
+commits you start creating:
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+git config --global core.editor emacs   -- >  different text editor, such as Emacs, you can do the following:
+$ git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+default branch name is main 
+git config --global init.defaultBranch main
+git config --list 
+git config user.name
+git config --show-origin rerere.autoUpdate
+git help config
+ #git, #github, or #gitlab
+  https://libera.chat/.
+  
+  git add -h
+  -- Initializing a Repository in an Existing Directory
+  git init
+  git clone <url>
+  git status
+  echo 'My Project' > README --> untrackerd file 
+  Tracking new file --> git add README
+  git add .
+  git status -s
+  cat .gitignore --> ignoring files 
+  *.[oa]
+  *~
+  
+  git diff
+  git diff --staged
+  git diff --cached
+  
+  git commit -m "Story 182: fix benchmarks for speed"
+
+ git mv readme.md readme
+ 
+ git log 
+ git log -p -2  (Patch)
+ git log --stat
+ git log --pretty=oneline , short , full, fuller
+ git log --pretty=format:"%h - %an, %ar : %s"
+git log --pretty=format:"%h %s" --graph
+git log --since=2.weeks
+git log -S function_name
+
+For example, if you want to see which commits modifying test files in the Git source code history
+were committed by Junio Hamano in the month of October 2008 and are not merge commits,
+can run something like this:
+
+$ git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" \
+  --before="2008-11-01" --no-merges -- t/
+ 
+ 
+  git commit --amend  -->Undoing Things
+git reset HEAD <file> -->Unstaging a Staged File
+ git reset HEAD CONTRIBUTING.md
+ git checkout -- CONTRIBUTING.md -->Unmodifying a Modified File  discard the changes 
+ 
+
